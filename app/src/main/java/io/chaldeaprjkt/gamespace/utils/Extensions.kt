@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
+ * Copyright (C) 2022 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,10 +44,6 @@ val Int.dp
 
 fun WindowManager.isPortrait() =
     maximumWindowMetrics.bounds.width() < maximumWindowMetrics.bounds.height()
-
-fun Activity.assertStarterOrigin() =
-    intent?.getStringExtra("referer")?.takeIf { it.isNotEmpty() }
-        ?: throw SecurityException("failed to assert starter origin")
 
 inline fun <reified T : Any> Context.entryPointOf(): T =
     EntryPoints.get(applicationContext, T::class.java)
