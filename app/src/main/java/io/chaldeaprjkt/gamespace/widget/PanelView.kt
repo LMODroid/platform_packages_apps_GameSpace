@@ -58,6 +58,8 @@ class PanelView @JvmOverloads constructor(
     }
 
     private fun applyRelativeLocation() {
+        layoutParams.height = LayoutParams.WRAP_CONTENT
+
         doOnLayout {
             if (defaultY == null)
                 defaultY = y
