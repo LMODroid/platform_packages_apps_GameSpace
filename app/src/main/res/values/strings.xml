@@ -73,4 +73,5 @@
     <string name="in_game_calls_no_action">No action</string>
     <string name="in_game_calls_auto_answer">Auto answer</string>
     <string name="in_game_calls_auto_reject">Auto reject</string>
+    <string name="date_format" translatable="false">dd.MM.yyyy</string>
 </resources>
