@@ -14,7 +14,7 @@
     limitations under the License.
   -->
 
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="settings_title">Game Space</string>
     <string name="settings_summary">Manage your gaming setup</string>
     <string name="app_selector_label">Pick your game</string>
@@ -73,5 +73,6 @@
     <string name="in_game_calls_no_action">No action</string>
     <string name="in_game_calls_auto_answer">Auto answer</string>
     <string name="in_game_calls_auto_reject">Auto reject</string>
-    <string name="date_format" translatable="false">dd.MM.yyyy</string>
+    <string name="date_format" translatable="false">EEEE, MMM d</string>
+    <string name="battery_format">Battery: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
 </resources>
