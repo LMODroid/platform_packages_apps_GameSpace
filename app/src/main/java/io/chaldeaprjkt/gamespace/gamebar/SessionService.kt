@@ -57,6 +57,9 @@ class SessionService : Hilt_SessionService() {
     @Inject
     lateinit var gameModeUtils: GameModeUtils
 
+    @Inject
+    lateinit var callListener: CallListener
+
     private val scope = CoroutineScope(Job() + Dispatchers.IO)
 
     private val gameBarConnection = object : ServiceConnection {
@@ -112,6 +115,8 @@ class SessionService : Hilt_SessionService() {
     override fun onBind(intent: Intent?): IBinder? = null
 
     override fun onDestroy() {
+        callListener.destory()
+
         if (isBarConnected) {
             gameBar.onGameLeave()
             unbindService(gameBarConnection)
@@ -142,6 +147,8 @@ class SessionService : Hilt_SessionService() {
         } catch (e: Exception) {
             Log.d(TAG, e.toString())
         }
+
+        callListener.init()
     }
 
     private fun tryStartFromDeath(): Int {
