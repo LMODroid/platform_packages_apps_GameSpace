@@ -82,18 +82,25 @@
                     android:format24Hour="@string/date_format"
                     android:textSize="13sp" />
 
-            <io.chaldeaprjkt.gamespace.widget.MemoryView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="35dp"
-                android:textSize="13sp" />
+                <io.chaldeaprjkt.gamespace.widget.MemoryView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="13sp" />
 
-           <io.chaldeaprjkt.gamespace.widget.BatteryView
-                android:id="@+id/battery_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:textSize="13sp" />
+            <io.chaldeaprjkt.gamespace.widget.BatteryView
+                    android:id="@+id/battery_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/batteryTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:textSize="13sp" />
 
             </LinearLayout>
 
