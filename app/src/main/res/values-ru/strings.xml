@@ -27,7 +27,6 @@
     <string name="app_search_title">Поиск</string>
     <string name="three_screenshot_disabled_summary">Временно отключить жест тремя пальцами для скриншота во время игры.</string>
     <string name="three_screenshot_disabled_title">Отключить свайп для скриншота</string>
-    <string name="chaldea">chaldeaprjkt</string>
     <string name="state_enabled">включено</string>
     <string name="state_disabled">отключено</string>
     <!-- Game Mode Name - sorted by GameManager's enum, do not modify the sequence! -->

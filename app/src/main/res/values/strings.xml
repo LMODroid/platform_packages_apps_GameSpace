@@ -27,7 +27,6 @@
     <string name="app_search_title">Search</string>
     <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe screenshot gesture while in-game</string>
     <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
-    <string name="chaldea">chaldeaprjkt</string>
     <string name="state_enabled">enabled</string>
     <string name="state_disabled">disabled</string>
     <!-- Game Mode Name - sorted by GameManager's enum, do not modify the sequence! -->

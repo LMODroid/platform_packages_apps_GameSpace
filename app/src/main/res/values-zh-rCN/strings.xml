@@ -27,7 +27,6 @@
     <string name="app_search_title">搜索</string>
     <string name="three_screenshot_disabled_summary">游戏中临时禁用三指截图手势</string>
     <string name="three_screenshot_disabled_title">禁用三指截图</string>
-    <string name="chaldea">chaldeaprjkt</string>
     <string name="state_enabled">已启用</string>
     <string name="state_disabled">禁用</string>
     <!-- Game Mode Name - sorted by GameManager's enum, do not modify the sequence! -->

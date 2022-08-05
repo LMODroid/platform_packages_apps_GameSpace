@@ -27,7 +27,6 @@
     <string name="app_search_title">Suche</string>
     <string name="three_screenshot_disabled_summary">Vorübergehende Deaktivierung der Screenshotgeste mit drei Fingern im Spiel</string>
     <string name="three_screenshot_disabled_title">Wischen für Bildschirmfoto deaktivieren</string>
-    <string name="chaldea">chaldeaprjkt</string>
     <string name="state_enabled">aktiviert</string>
     <string name="state_disabled">daktiviert</string>
     <!-- Game Mode Name - sorted by GameManager's enum, do not modify the sequence! -->
