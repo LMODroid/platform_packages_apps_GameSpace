@@ -13,7 +13,7 @@
         android:drawableTop="@drawable/ic_arrow_left"
         android:minEms="3"
         android:textAlignment="center"
-        android:textColor="@color/onBarBackground"
+        android:textColor="@color/onBarBackgroundText"
         android:textSize="13sp" />
 
 </LinearLayout>
