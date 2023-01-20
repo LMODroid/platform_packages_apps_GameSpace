@@ -29,6 +29,7 @@
     <uses-permission android:name="android.permission.WRITE_DEVICE_CONFIG" />
     <uses-permission android:name="com.android.systemui.permission.SCREEN_RECORDING" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_FPS_COUNTER" />
 
     <application
         android:name=".GameSpace"
@@ -62,7 +63,7 @@
         <receiver
             android:name=".gamebar.GameBroadcastReceiver"
             android:exported="true"
-            tools:ignore="ExportedReceiver">
+            android:permission="android.permission.MANAGE_GAME_MODE">
             <intent-filter>
                 <action android:name="io.chaldeaprjkt.gamespace.action.GAME_START" />
                 <action android:name="io.chaldeaprjkt.gamespace.action.GAME_STOP" />
