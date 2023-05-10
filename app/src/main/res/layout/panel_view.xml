@@ -39,7 +39,7 @@
                 android:layout_marginHorizontal="4dp"
                 android:fontFamily="sans-serif-light"
                 android:text="@string/settings_title"
-                android:textSize="32sp" />
+                android:textSize="21sp" />
 
             <include layout="@layout/tiles" />
 

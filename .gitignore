@@ -10,7 +10,4 @@
 .cxx
 local.properties
 /app/release
-/magisk*
-/prebuilts
-/SettingsLibParts
 /gradlew.bat
