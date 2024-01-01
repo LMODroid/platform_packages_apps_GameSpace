@@ -21,6 +21,8 @@ import android.provider.Settings
 import io.chaldeaprjkt.gamespace.utils.GameModeUtils
 import javax.inject.Inject
 
+import com.libremobileos.providers.LMOSettings
+
 class SystemSettings @Inject constructor(
     context: Context,
     private val gameModeUtils: GameModeUtils
@@ -60,12 +62,12 @@ class SystemSettings @Inject constructor(
 
     var threeScreenshot
         get() = Settings.System.getIntForUser(
-            resolver, Settings.System.THREE_FINGER_GESTURE, 0,
+            resolver, LMOSettings.System.THREE_FINGER_GESTURE, 0,
             UserHandle.USER_CURRENT
         ) == 1
         set(it) {
             Settings.System.putIntForUser(
-                resolver, Settings.System.THREE_FINGER_GESTURE,
+                resolver, LMOSettings.System.THREE_FINGER_GESTURE,
                 it.toInt(), UserHandle.USER_CURRENT
             )
         }
@@ -73,14 +75,14 @@ class SystemSettings @Inject constructor(
     var suppressFullscreenIntent
         get() = Settings.System.getIntForUser(
             resolver,
-            Settings.System.GAMESPACE_SUPPRESS_FULLSCREEN_INTENT,
+            LMOSettings.System.GAMESPACE_SUPPRESS_FULLSCREEN_INTENT,
             0,
             UserHandle.USER_CURRENT
         ) == 1
         set(it) {
             Settings.System.putIntForUser(
                 resolver,
-                Settings.System.GAMESPACE_SUPPRESS_FULLSCREEN_INTENT,
+                LMOSettings.System.GAMESPACE_SUPPRESS_FULLSCREEN_INTENT,
                 it.toInt(),
                 UserHandle.USER_CURRENT
             )
@@ -89,7 +91,7 @@ class SystemSettings @Inject constructor(
     var userGames
         get() =
             Settings.System.getStringForUser(
-                resolver, Settings.System.GAMESPACE_GAME_LIST,
+                resolver, LMOSettings.System.GAMESPACE_GAME_LIST,
                 UserHandle.USER_CURRENT
             )
                 ?.split(";")
@@ -98,7 +100,7 @@ class SystemSettings @Inject constructor(
         set(games) {
             Settings.System.putStringForUser(
                 resolver,
-                Settings.System.GAMESPACE_GAME_LIST,
+                LMOSettings.System.GAMESPACE_GAME_LIST,
                 if (games.isEmpty()) "" else
                     games.joinToString(";") { it.toString() },
                 UserHandle.USER_CURRENT

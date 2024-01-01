@@ -30,6 +30,8 @@ import io.chaldeaprjkt.gamespace.preferences.AppListPreferences
 import io.chaldeaprjkt.gamespace.preferences.appselector.AppSelectorActivity
 import javax.inject.Inject
 
+import com.libremobileos.providers.LMOSettings
+
 @AndroidEntryPoint(PreferenceFragmentCompat::class)
 class SettingsFragment : Hilt_SettingsFragment(), Preference.OnPreferenceChangeListener {
     @Inject
@@ -57,7 +59,7 @@ class SettingsFragment : Hilt_SettingsFragment(), Preference.OnPreferenceChangeL
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        apps = findPreference(Settings.System.GAMESPACE_GAME_LIST)
+        apps = findPreference(LMOSettings.System.GAMESPACE_GAME_LIST)
         apps?.onRegisteredAppClick {
             perAppResult.launch(Intent(context, PerAppSettingsActivity::class.java).apply {
                 putExtra(PerAppSettingsActivity.EXTRA_PACKAGE, it)
@@ -70,7 +72,7 @@ class SettingsFragment : Hilt_SettingsFragment(), Preference.OnPreferenceChangeL
                 return@setOnPreferenceClickListener true
             }
 
-        findPreference<SwitchPreference>(Settings.System.GAMESPACE_SUPPRESS_FULLSCREEN_INTENT)?.apply {
+        findPreference<SwitchPreference>(LMOSettings.System.GAMESPACE_SUPPRESS_FULLSCREEN_INTENT)?.apply {
             isChecked = settings.suppressFullscreenIntent
             onPreferenceChangeListener = this@SettingsFragment
         }
@@ -83,7 +85,7 @@ class SettingsFragment : Hilt_SettingsFragment(), Preference.OnPreferenceChangeL
 
     override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
         when (preference.key) {
-            Settings.System.GAMESPACE_SUPPRESS_FULLSCREEN_INTENT -> {
+            LMOSettings.System.GAMESPACE_SUPPRESS_FULLSCREEN_INTENT -> {
                 settings.suppressFullscreenIntent = newValue as Boolean
                 return true
             }
