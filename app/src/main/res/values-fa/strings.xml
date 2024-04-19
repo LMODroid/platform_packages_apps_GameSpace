@@ -60,7 +60,6 @@
         <item>باتری</item>
     </string-array>
 
-    <string name="per_app_angle_title">Use ANGLE (experimental)</string>
     <string name="per_app_angle_title">استفاده از ANGLE (آزمایشی)</string>
     <string name="per_app_angle_summary">استفاده از ANGLE به جای GLES. \n توجه: ممکن است بعضی از بخش های گرافیکی بازی آسیب ببیند. با آگاهی استفاده کنید!</string>
     <string name="cant_find_angle_pkg">نتوانستیم ANGLE را پیدا کنیم!</string>
