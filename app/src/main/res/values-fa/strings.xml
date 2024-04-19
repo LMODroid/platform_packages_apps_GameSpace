@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Copyright (C) Chaldeaprjkt
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+  -->
+
+<resources>
+    <string name="settings_title">قضای بازی</string>
+    <string name="settings_summary">تنظیمات بازی خود را مدیریت کنید</string>
+    <string name="app_selector_label">بازی خود را انتخاب کنید</string>
+    <string name="auto_brightness_disabled_title">غیرفعال‌سازی تنظیمات نور اتوماتیک</string>
+    <string name="auto_brightness_disabled_summary">در حین بازی، میزان نور صفحه را ثابت نگه‌ دارید</string>
+    <string name="heads_up_disabled_title">غیرفعال‌سازی heads-up</string>
+    <string name="heads_up_disabled_summary">اعلان‌ های اولویت بالا را در حین بازی غیرفعال کنید</string>
+    <string name="game_list_title">لیست بازی‌ها</string>
+    <string name="game_remove_message">آیا مطمئن هستید که می‌خواهید بازی %1$s را از لیست بازی‌های خود حذف کنید؟</string>
+    <string name="app_search_title">جستجو</string>
+    <string name="three_screenshot_disabled_summary">قابلیت اسکرین‌شات با حرکت سه انگشت را به صورت موقت غیرفعال کنید</string>
+    <string name="three_screenshot_disabled_title">غیرفعال‌سازی اسکرین‌شات با حرکت دست</string>
+    <string name="state_enabled">فعال</string>
+    <string name="state_disabled">غیرفعال</string>
+    <!-- Game Mode Name - sorted by GameManager's enum, do not modify the sequence! -->
+    <string name="game_mode_title">حالت اجرا</string>
+    <string-array name="game_mode_names">
+        <item>پشتیبانی نمی‌شود</item>
+        <item>استاندارد</item>
+        <item>بازدهی بالا</item>
+        <item>باتری</item>
+    </string-array>
+    <string name="heads_up_title">Heads-up</string>
+    <string name="fps_Info_title">اطلاعات فریم‌ریت</string>
+    <string name="stay_awake_title">بیدار باش</string>
+    <string name="stay_awake_summary">به هنگام بازی، صفحه نمایش روشن بماند</string>
+
+    <string name="ringer_mode_title">حالت زنگ خوردن حین بازی</string>
+    <string-array name="ringer_mode_entries">
+        <item>سکوت</item>
+        <item>ویبره</item>
+        <item>پیشفرض (معمولی)</item>
+    </string-array>
+
+    <string name="suppress_fullscreen_intent_title">جلوگیری از رویداد های تمام صفحه</string>
+    <string name="suppress_fullscreen_intent_summary">از نمایش رویداد های تمام صفحه مانند تماس تلفنی در حین بازی جلوگیری کنید</string>
+
+    <string name="per_app_title">پیکربندی بازی</string>
+    <string name="per_app_mode_title">حالت اجرا</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>استاندارد</item>
+        <item>بازدهی</item>
+        <item>باتری</item>
+    </string-array>
+
+    <string name="per_app_angle_title">Use ANGLE (experimental)</string>
+    <string name="per_app_angle_title">استفاده از ANGLE (آزمایشی)</string>
+    <string name="per_app_angle_summary">استفاده از ANGLE به جای GLES. \n توجه: ممکن است بعضی از بخش های گرافیکی بازی آسیب ببیند. با آگاهی استفاده کنید!</string>
+    <string name="cant_find_angle_pkg">نتوانستیم ANGLE را پیدا کنیم!</string>
+
+    <string name="per_app_unregister">حذف کردن %1$s از لیست بازی‌ها</string>
+
+</resources>
