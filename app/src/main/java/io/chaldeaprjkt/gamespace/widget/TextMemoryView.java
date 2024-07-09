@@ -16,7 +16,6 @@
 package io.chaldeaprjkt.gamespace.widget;
 
 import android.app.ActivityManager;
-import com.android.internal.util.MemInfoReader;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
@@ -71,19 +70,11 @@ public class TextMemoryView extends TextView {
     private class MemInfoWorker implements Runnable {
         @Override
         public void run() {
-            ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
-            MemInfoReader mMemInfoReader = new MemInfoReader();
-            mActivityManager.getMemoryInfo(memInfo);
-            mMemInfoReader.readMemInfo();
-            long totalMem = mMemInfoReader.getTotalSize();
-            long usedZramMem = (mMemInfoReader.getSwapTotalSizeKb() * 1024) - (mMemInfoReader.getSwapFreeSizeKb() * 1024);
-            long availMem = mMemInfoReader.getFreeSize() + mMemInfoReader.getKernelUsedSize() + mMemInfoReader.getCachedSize() + usedZramMem - memInfo.secondaryServerThreshold;
-            long availMemMiB = availMem / (1024 * 1024);
-            long totalMemMiB = totalMem / (1024 * 1024);
-            int percentMem = (int)(Math.round(availMemMiB * 100.0 / totalMemMiB));
-            int usedMem = (int)(100 - percentMem);
-            setText(getContext().getString(R.string.memory_format, usedMem));
-
+            ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+            mActivityManager.getMemoryInfo(memoryInfo);
+            long usedMemory = memoryInfo.totalMem - memoryInfo.availMem;
+            int usedMemoryPercentage = (int) ((usedMemory * 100) / memoryInfo.totalMem);
+            setText(getContext().getString(R.string.memory_format, usedMemoryPercentage));
             mHandler.postDelayed(this, 1000);
         }
     }
