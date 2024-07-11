@@ -66,4 +66,6 @@
 
     <string name="per_app_unregister">Remove %1$s from library</string>
 
+    <string name="edge_cutout_title">Edge Cutout</string>
+    <string name="edge_cutout_summary">Enable edge cutout on the screen</string>
 </resources>
