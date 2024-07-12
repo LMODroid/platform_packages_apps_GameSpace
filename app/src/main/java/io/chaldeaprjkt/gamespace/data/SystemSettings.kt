@@ -120,5 +120,17 @@ class SystemSettings @Inject constructor(
             )
         }
 
+    var doubleTapToSleep
+        get() = Settings.System.getIntForUser(
+                resolver, LMOSettings.System.DOUBLE_TAP_SLEEP_GESTURE,1,
+                UserHandle.USER_CURRENT
+            )==1
+            set(it){
+                Settings.System.putIntForUser(
+                    resolver,LMOSettings.System.DOUBLE_TAP_SLEEP_GESTURE,
+                    it.toInt(),UserHandle.USER_CURRENT
+            )
+        }
+
     private fun Boolean.toInt() = if (this) 1 else 0
 }

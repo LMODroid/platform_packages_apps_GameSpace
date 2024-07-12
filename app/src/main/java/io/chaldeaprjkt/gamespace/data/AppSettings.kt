@@ -69,6 +69,10 @@ class AppSettings @Inject constructor(private val context: Context) {
         get() = db.getBoolean(KEY_EDGE_CUTOUT, true)
         set(value) = db.edit().putBoolean(KEY_EDGE_CUTOUT, value).apply()
 
+    var doubleTaptoSleep
+        get() = db.getBoolean(KEY_DOUBLE_TAP_TO_SLEEP,false)
+        set(value) = db.edit().putBoolean(KEY_DOUBLE_TAP_TO_SLEEP,value).apply()
+
     companion object {
         const val KEY_HEADS_UP_DISABLE = "gamespace_heads_up_disabled"
         const val KEY_AUTO_BRIGHTNESS_DISABLE = "gamespace_auto_brightness_disabled"
@@ -78,5 +82,6 @@ class AppSettings @Inject constructor(private val context: Context) {
         const val KEY_CALLS_MODE = "gamespace_calls_mode"
         const val KEY_RINGER_MODE = "gamespace_ringer_mode"
         const val KEY_EDGE_CUTOUT = "gamespace_edge_cutout"
+        const val KEY_DOUBLE_TAP_TO_SLEEP = "double_tap_sleep_gesture"
     }
 }
