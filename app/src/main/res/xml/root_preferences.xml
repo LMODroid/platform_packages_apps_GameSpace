@@ -54,6 +54,12 @@
 
         <SwitchPreference
             android:defaultValue="false"
+            android:key="double_tap_sleep_gesture"
+            android:title="@string/double_tap_to_sleep_title"
+            android:summary="@string/double_tap_to_sleep_summary"/>
+
+        <SwitchPreference
+            android:defaultValue="false"
             android:key="gamespace_tfgesture_disabled"
             android:summary="@string/three_screenshot_disabled_summary"
             android:title="@string/three_screenshot_disabled_title" />

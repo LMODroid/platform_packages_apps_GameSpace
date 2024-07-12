@@ -60,6 +60,7 @@ class GameSession @Inject constructor(
             threeScreenshot = systemSettings.threeScreenshot,
             ringerMode = audioManager.ringerModeInternal,
             edgeCutout = systemSettings.edgeCutout,
+            doubleTapToSleep = systemSettings.doubleTapToSleep,
         )
         if (appSettings.noHeadsUp) {
             systemSettings.headsUp = false
@@ -72,6 +73,9 @@ class GameSession @Inject constructor(
         }
         if (appSettings.edgeCutout) {
             systemSettings.edgeCutout = true
+        }
+        if (appSettings.doubleTaptoSleep){
+           systemSettings.doubleTapToSleep = false
         }
         audioManager.ringerModeInternal = appSettings.ringerMode
     }
@@ -89,6 +93,9 @@ class GameSession @Inject constructor(
         }
         if (appSettings.edgeCutout) {
             orig.edgeCutout?.let { systemSettings.edgeCutout = it }
+        }
+        if (appSettings.doubleTaptoSleep) {
+            orig.doubleTapToSleep?.let{ systemSettings.doubleTapToSleep = it }
         }
         audioManager.ringerModeInternal = orig.ringerMode
         state = null
