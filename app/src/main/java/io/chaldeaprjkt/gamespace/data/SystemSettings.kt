@@ -16,19 +16,29 @@
 package io.chaldeaprjkt.gamespace.data
 
 import android.content.Context
+import android.os.RemoteException;
 import android.os.UserHandle
 import android.provider.Settings
+import android.util.Log;
 import io.chaldeaprjkt.gamespace.utils.GameModeUtils
 import javax.inject.Inject
 
 import com.libremobileos.providers.LMOSettings
 
+import vendor.lineage.fastcharge.V1_0.IFastCharge
+
 class SystemSettings @Inject constructor(
     context: Context,
     private val gameModeUtils: GameModeUtils
 ) {
+    private val TAG = "GameSpaceSystemSettings"
 
     private val resolver = context.contentResolver
+    private var fastChargeService: IFastCharge? = try {
+            IFastCharge.getService()
+        } catch(e: Exception) {
+            null
+        }
 
     var headsUp
         get() =
@@ -130,6 +140,21 @@ class SystemSettings @Inject constructor(
                     resolver,LMOSettings.System.DOUBLE_TAP_SLEEP_GESTURE,
                     it.toInt(),UserHandle.USER_CURRENT
             )
+        }
+
+    var fastCharge
+        get() = try {
+            fastChargeService?.isEnabled() ?: true
+        } catch (e: RemoteException) {
+            Log.e(TAG, "Failed to get fast charge state", e)
+            true // by default consider, it's enabled.
+        }
+        set(value) {
+            try {
+                fastChargeService?.setEnabled(value)
+            } catch (e: RemoteException) {
+                Log.e(TAG, "Failed to disable fast charge", e)
+            }
         }
 
     private fun Boolean.toInt() = if (this) 1 else 0

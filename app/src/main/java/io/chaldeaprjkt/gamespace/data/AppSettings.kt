@@ -73,6 +73,10 @@ class AppSettings @Inject constructor(private val context: Context) {
         get() = db.getBoolean(KEY_DOUBLE_TAP_TO_SLEEP,true)
         set(value) = db.edit().putBoolean(KEY_DOUBLE_TAP_TO_SLEEP,value).apply()
 
+    var fastChargeEnabler
+        get() = db.getBoolean(KEY_FAST_CHARGE_ENABLER, false)
+        set(value) = db.edit().putBoolean(KEY_FAST_CHARGE_ENABLER, value).apply()
+
     companion object {
         const val KEY_HEADS_UP_DISABLE = "gamespace_heads_up_disabled"
         const val KEY_AUTO_BRIGHTNESS_DISABLE = "gamespace_auto_brightness_disabled"
@@ -83,5 +87,6 @@ class AppSettings @Inject constructor(private val context: Context) {
         const val KEY_RINGER_MODE = "gamespace_ringer_mode"
         const val KEY_EDGE_CUTOUT = "gamespace_edge_cutout"
         const val KEY_DOUBLE_TAP_TO_SLEEP = "double_tap_sleep_gesture"
+        const val KEY_FAST_CHARGE_ENABLER = "fast_charge_enabler"
     }
 }
