@@ -77,4 +77,7 @@
 
     <string name="double_tap_to_sleep_title">غیرفعال کردن دو ضربه برای خواب</string>
     <string name="double_tap_to_sleep_summary">غیرفعال کردن دو ضربه در نوار وضعیت برای خواب در بازی</string>
+
+    <string name="fastcharge_enabled_title">فعال کردن شارژ سریع</string>
+    <string name="fastcharge_enabled_summary">فعال کردن شارژ سریع هنگام بازی کردن و اتصال گوشی به شارژر</string>
 </resources>

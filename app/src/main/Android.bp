@@ -26,6 +26,7 @@ android_app {
         "kotlinx-coroutines-android",
         "gson-prebuilt-jar-2.9.1",
         "hilt_android",
+        "vendor.lineage.fastcharge-V1.0-java",
     ],
     libs: [
         "framework-lmodroid",

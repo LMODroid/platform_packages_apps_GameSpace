@@ -19,6 +19,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.preference.Preference
@@ -34,10 +35,14 @@ import javax.inject.Inject
 
 import com.libremobileos.providers.LMOSettings
 
+import vendor.lineage.fastcharge.V1_0.IFastCharge
+
 @AndroidEntryPoint(PreferenceFragmentCompat::class)
 class SettingsFragment : Hilt_SettingsFragment(), Preference.OnPreferenceChangeListener {
     @Inject
     lateinit var settings: SystemSettings
+
+    private val TAG = "GameSpaceSettingsFragment"
 
     private var apps: AppListPreferences? = null
 
@@ -90,6 +95,19 @@ class SettingsFragment : Hilt_SettingsFragment(), Preference.OnPreferenceChangeL
                         isVisible = false
                     }
             } catch (e: PackageManager.NameNotFoundException) {
+                isVisible = false
+            }
+        }
+
+        findPreference<SwitchPreferenceCompat>(AppSettings.KEY_FAST_CHARGE_ENABLER)?.apply {
+            try {
+                val fastCharge = IFastCharge.getService()
+                isVisible = fastCharge != null
+                // consider disable if not supported by device.
+                // since we enable it by default, it avoids trying to
+                // set fastcharge state in unsupported devices.
+            } catch (e: Throwable) {
+                Log.e(TAG, "Failed to get IFastCharge service", e)
                 isVisible = false
             }
         }

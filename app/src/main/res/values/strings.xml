@@ -79,4 +79,7 @@
 
     <string name="double_tap_to_sleep_title">Disable double tap to sleep</string>
     <string name="double_tap_to_sleep_summary">Disable in-game double tap at statusbar to sleep </string>
+
+    <string name="fastcharge_enabled_title">Enable Fast Charge</string>
+    <string name="fastcharge_enabled_summary">Enable Fast Charge while playing games and phone is plugged in</string>
 </resources>
