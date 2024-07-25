@@ -70,7 +70,7 @@ class AppSettings @Inject constructor(private val context: Context) {
         set(value) = db.edit().putBoolean(KEY_EDGE_CUTOUT, value).apply()
 
     var doubleTaptoSleep
-        get() = db.getBoolean(KEY_DOUBLE_TAP_TO_SLEEP,false)
+        get() = db.getBoolean(KEY_DOUBLE_TAP_TO_SLEEP,true)
         set(value) = db.edit().putBoolean(KEY_DOUBLE_TAP_TO_SLEEP,value).apply()
 
     companion object {
