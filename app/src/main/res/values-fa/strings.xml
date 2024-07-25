@@ -80,4 +80,8 @@
 
     <string name="fastcharge_enabled_title">فعال کردن شارژ سریع</string>
     <string name="fastcharge_enabled_summary">فعال کردن شارژ سریع هنگام بازی کردن و اتصال گوشی به شارژر</string>
+    <string name="fast_charge_enabled_warning_title">فعال کردن شارژ سریع هنگام بازی؟</string>
+    <string name="fast_charge_enabled_warning_message">بازی کردن با دستگاه در حالتی که به شارژر متصل است می‌تواند به باتری آسیب برساند، اما غیرفعال کردن شارژ سریع می‌تواند این آسیب را کاهش دهد.\nآیا مطمئن هستید که می‌خواهید شارژ سریع را هنگام بازی کردن فعال کنید؟</string>
+    <string name="fast_charge_enabled_warning_confirm">به هر حال فعال کن!</string>
+    <string name="fast_charge_enabled_warning_cancel">لغو</string>
 </resources>
