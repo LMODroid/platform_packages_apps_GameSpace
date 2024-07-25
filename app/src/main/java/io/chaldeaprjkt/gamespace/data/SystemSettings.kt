@@ -110,13 +110,13 @@ class SystemSettings @Inject constructor(
 
     var edgeCutout
         get() = Settings.Secure.getIntForUser(
-            resolver, LMOSettings.Secure.EDGE_CUTOUT, 1,
+            resolver, LMOSettings.Secure.EDGE_CUTOUT, 0,
             UserHandle.USER_CURRENT
         ) == 1
-        set(it) {
+        set(value) {
             Settings.Secure.putIntForUser(
                 resolver, LMOSettings.Secure.EDGE_CUTOUT,
-                it.toInt(), UserHandle.USER_CURRENT
+                value.toInt(), UserHandle.USER_CURRENT
             )
         }
 

@@ -66,7 +66,7 @@ class AppSettings @Inject constructor(private val context: Context) {
         set(value) = db.edit().putString(KEY_RINGER_MODE, value.toString()).apply()
 
     var edgeCutout
-        get() = db.getBoolean(KEY_EDGE_CUTOUT, true)
+        get() = db.getBoolean(KEY_EDGE_CUTOUT, false)
         set(value) = db.edit().putBoolean(KEY_EDGE_CUTOUT, value).apply()
 
     var doubleTaptoSleep
