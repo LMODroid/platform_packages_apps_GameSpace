@@ -14,7 +14,7 @@
     limitations under the License.
   -->
 
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="settings_title">قضای بازی</string>
     <string name="settings_summary">تنظیمات بازی خود را مدیریت کنید</string>
     <string name="app_selector_label">بازی خود را انتخاب کنید</string>
@@ -66,4 +66,15 @@
 
     <string name="per_app_unregister">حذف کردن %1$s از لیست بازی‌ها</string>
 
+    <string name="edge_cutout_title">بریدگی لبه</string>
+    <string name="edge_cutout_summary">فعال کردن بریدگی لبه روی صفحه نمایش</string>
+
+    <string name="in_game_calls_title">حالت تماس</string>
+    <string name="in_game_calls_no_action">بدون عمل</string>
+    <string name="in_game_calls_auto_answer">پاسخ خودکار</string>
+    <string name="in_game_calls_auto_reject">رد خودکار</string>
+    <string name="memory_format">استفاده از رم: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
+
+    <string name="double_tap_to_sleep_title">غیرفعال کردن دو ضربه برای خواب</string>
+    <string name="double_tap_to_sleep_summary">غیرفعال کردن دو ضربه در نوار وضعیت برای خواب در بازی</string>
 </resources>
