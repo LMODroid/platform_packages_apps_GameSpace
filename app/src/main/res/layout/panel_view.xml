@@ -71,6 +71,17 @@
                     android:textSize="14sp" />
 
                 <io.chaldeaprjkt.gamespace.widget.BatteryView
+                    android:id="@+id/battery_outline_charging"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:drawableStart="@drawable/battery_outline_charging"
+                    android:textColor="?android:attr/textColorPrimaryInverse"
+                    android:drawablePadding="2dp"
+                    android:textSize="14sp" />
+
+                <io.chaldeaprjkt.gamespace.widget.BatteryView
+                    android:id="@+id/battery_outline"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="4dp"

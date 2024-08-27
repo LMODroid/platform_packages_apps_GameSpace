@@ -17,11 +17,13 @@
  */
 package io.chaldeaprjkt.gamespace.widget
 
+import androidx.core.content.ContextCompat
 import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.graphics.drawable.Drawable
 import android.os.BatteryManager
 import android.util.AttributeSet
 import android.widget.TextView
@@ -43,6 +45,25 @@ class BatteryView @JvmOverloads constructor(
                 val scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, 0)
                 val percent = (level.toFloat() / scale * 100).toInt()
                 text = context.getString(R.string.battery_format, percent)
+                val status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1)
+                val batteryViewCharging = findViewById<BatteryView>(R.id.battery_outline_charging)
+                val batteryViewNonCharging = findViewById<BatteryView>(R.id.battery_outline)
+            var chargingDrawable: android.graphics.drawable.Drawable? = null
+            var nonChargingDrawable: android.graphics.drawable.Drawable? = null
+            if (status == BatteryManager.BATTERY_STATUS_CHARGING) {
+                chargingDrawable = batteryViewCharging?.compoundDrawables?.get(0)
+                nonChargingDrawable = batteryViewNonCharging?.compoundDrawables?.get(0)
+            }
+            else {
+                nonChargingDrawable = batteryViewNonCharging?.compoundDrawables?.get(0)
+                chargingDrawable = batteryViewCharging?.compoundDrawables?.get(0)
+            }
+            chargingDrawable?.setBounds(0, 0, chargingDrawable.intrinsicWidth, chargingDrawable.intrinsicHeight)
+            nonChargingDrawable?.setBounds(0, 0, nonChargingDrawable.intrinsicWidth, nonChargingDrawable.intrinsicHeight)
+            batteryViewCharging?.setCompoundDrawables(chargingDrawable, null, null, null)
+            batteryViewNonCharging?.setCompoundDrawables(nonChargingDrawable, null, null, null)
+            batteryViewCharging?.visibility = if (status != BatteryManager.BATTERY_STATUS_DISCHARGING && status != BatteryManager.BATTERY_STATUS_NOT_CHARGING) VISIBLE else GONE
+            batteryViewNonCharging?.visibility = if (status == BatteryManager.BATTERY_STATUS_DISCHARGING || status == BatteryManager.BATTERY_STATUS_NOT_CHARGING) VISIBLE else GONE
             }
         }
     }
