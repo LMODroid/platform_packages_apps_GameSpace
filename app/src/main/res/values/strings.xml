@@ -66,7 +66,7 @@
 
     <string name="per_app_unregister">Remove %1$s from library</string>
 
-    <string name="edge_cutout_title">Edge Cutout</string>
+    <string name="edge_cutout_title">Edge cutout</string>
     <string name="edge_cutout_summary">Enable edge cutout on the screen</string>
 
     <string name="in_game_calls_title">Call mode</string>
@@ -80,10 +80,10 @@
     <string name="double_tap_to_sleep_title">Disable double tap to sleep</string>
     <string name="double_tap_to_sleep_summary">Disable in-game double tap at statusbar to sleep </string>
 
-    <string name="fastcharge_enabled_title">Enable Fast Charge</string>
-    <string name="fastcharge_enabled_summary">Enable Fast Charge while playing games and phone is plugged in</string>
-    <string name="fast_charge_enabled_warning_title">Enable Fast Charge while gaming?</string>
-    <string name="fast_charge_enabled_warning_message">Playing games on the device while it\'s plugged into a charger can damage the battery, but turning off Fast Charge can reduce this damage.\nAre you sure you want to enable Fast Charge while gaming?</string>
+    <string name="fastcharge_enabled_title">Enable fast charge</string>
+    <string name="fastcharge_enabled_summary">Enable fast charge while playing games and phone is plugged in</string>
+    <string name="fast_charge_enabled_warning_title">Enable fast charge while gaming?</string>
+    <string name="fast_charge_enabled_warning_message">Playing games on the device while it\'s plugged into a charger can damage the battery, but turning off fast charge can reduce this damage.\nAre you sure you want to enable fast charge while gaming?</string>
     <string name="fast_charge_enabled_warning_confirm">Enable Anyway!</string>
     <string name="fast_charge_enabled_warning_cancel">Cancel</string>
 </resources>
