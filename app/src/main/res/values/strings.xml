@@ -66,7 +66,7 @@
 
     <string name="per_app_unregister">Remove %1$s from library</string>
 
-    <string name="edge_cutout_title">Edge cutout</string>
+    <string name="edge_cutout_title">Edge cutout (BETA)</string>
     <string name="edge_cutout_summary">Enable edge cutout on the screen</string>
 
     <string name="in_game_calls_title">Call mode</string>
