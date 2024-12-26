@@ -29,7 +29,7 @@ android_app {
         "vendor.lineage.fastcharge-V1.0-java",
     ],
     libs: [
-        "framework-lmodroid",
+        "framework-lmodroid.impl",
     ],
     kotlincflags: [
         "-opt-in=kotlin.Experimental",
