@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="ic_launcher_background">@android:color/system_accent1_700</color>
+    <color name="ic_launcher_background">#7a56a7</color>
 
     <color name="error">#ef4040</color>
     <color name="accentActive">@android:color/system_accent1_600</color>
