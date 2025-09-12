@@ -36,6 +36,8 @@ import javax.inject.Inject
 
 import com.libremobileos.providers.LMOSettings
 
+import com.libremobileos.hardware.LineageHardwareManager;
+
 import vendor.lineage.fastcharge.V1_0.IFastCharge
 
 @AndroidEntryPoint(PreferenceFragmentCompat::class)
@@ -129,6 +131,11 @@ class SettingsFragment : Hilt_SettingsFragment(), Preference.OnPreferenceChangeL
                 Log.e(TAG, "Failed to get IFastCharge service", e)
                 isVisible = false
             }
+        }
+
+        findPreference<SwitchPreferenceCompat>(AppSettings.KEY_HIGH_TOUCH_POLLING_RATE)?.apply {
+            val hardware = LineageHardwareManager.getInstance(context)
+            isVisible = hardware?.isSupported(LineageHardwareManager.FEATURE_HIGH_TOUCH_POLLING_RATE) == true
         }
     }
 

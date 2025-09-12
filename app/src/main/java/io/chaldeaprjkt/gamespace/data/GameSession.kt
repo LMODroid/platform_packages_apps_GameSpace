@@ -61,7 +61,8 @@ class GameSession @Inject constructor(
             ringerMode = audioManager.ringerModeInternal,
             edgeCutout = systemSettings.edgeCutout,
             doubleTapToSleep = systemSettings.doubleTapToSleep,
-            fastCharge = systemSettings.fastCharge
+            fastCharge = systemSettings.fastCharge,
+            highTouchPollingRate = systemSettings.highTouchPollingRate
         )
         if (appSettings.noHeadsUp) {
             systemSettings.headsUp = false
@@ -77,6 +78,9 @@ class GameSession @Inject constructor(
         }
         if (appSettings.doubleTaptoSleep){
            systemSettings.doubleTapToSleep = false
+        }
+        if (appSettings.highTouchPollingRate){
+           systemSettings.highTouchPollingRate = false
         }
         audioManager.ringerModeInternal = appSettings.ringerMode
         systemSettings.fastCharge = appSettings.fastChargeEnabler
@@ -98,6 +102,9 @@ class GameSession @Inject constructor(
         }
         if (appSettings.doubleTaptoSleep) {
             orig.doubleTapToSleep?.let{ systemSettings.doubleTapToSleep = it }
+        }
+        if (appSettings.highTouchPollingRate) {
+            orig.highTouchPollingRate?.let{ systemSettings.highTouchPollingRate = it }
         }
         audioManager.ringerModeInternal = orig.ringerMode
         orig.fastCharge?.let { systemSettings.fastCharge = it }

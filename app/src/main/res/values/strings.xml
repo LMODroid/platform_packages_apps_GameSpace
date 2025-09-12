@@ -81,4 +81,7 @@
     <string name="fast_charge_enabled_warning_message">Playing games on the device while it\'s plugged into a charger can damage the battery, but turning off fast charge can reduce this damage.\nAre you sure you want to enable fast charge while gaming?</string>
     <string name="fast_charge_enabled_warning_confirm">Enable Anyway!</string>
     <string name="fast_charge_enabled_warning_cancel">Cancel</string>
+
+    <string name="high_touch_polling_rate_disabled_title">Disable High touch polling rate</string>
+    <string name="high_touch_polling_rate_disabled_summary">Disable Enable high touch polling rate while</string>
 </resources>
