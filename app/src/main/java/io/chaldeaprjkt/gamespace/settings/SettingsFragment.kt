@@ -32,6 +32,7 @@ import io.chaldeaprjkt.gamespace.data.AppSettings
 import io.chaldeaprjkt.gamespace.data.SystemSettings
 import io.chaldeaprjkt.gamespace.preferences.AppListPreferences
 import io.chaldeaprjkt.gamespace.preferences.appselector.AppSelectorActivity
+import java.util.NoSuchElementException
 import javax.inject.Inject
 
 import com.libremobileos.providers.LMOSettings
@@ -127,8 +128,8 @@ class SettingsFragment : Hilt_SettingsFragment(), Preference.OnPreferenceChangeL
                 // consider disable if not supported by device.
                 // since we enable it by default, it avoids trying to
                 // set fastcharge state in unsupported devices.
-            } catch (e: Throwable) {
-                Log.e(TAG, "Failed to get IFastCharge service", e)
+            } catch (e: NoSuchElementException) {
+                Log.d(TAG, "Failed to get IFastCharge service")
                 isVisible = false
             }
         }
