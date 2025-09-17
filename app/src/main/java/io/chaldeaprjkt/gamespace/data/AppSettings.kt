@@ -77,6 +77,10 @@ class AppSettings @Inject constructor(private val context: Context) {
         get() = db.getBoolean(KEY_HIGH_TOUCH_POLLING_RATE, false)
         set(value) = db.edit().putBoolean(KEY_HIGH_TOUCH_POLLING_RATE, value).apply()
 
+    var displayAutoOutdoor
+        get() = db.getBoolean(KEY_DISPLAY_AUTO_OUTDOOR_MODE, true)
+        set(value) = db.edit().putBoolean(KEY_DISPLAY_AUTO_OUTDOOR_MODE, value).apply()
+
     companion object {
         const val KEY_HEADS_UP_DISABLE = "gamespace_heads_up_disabled"
         const val KEY_AUTO_BRIGHTNESS_DISABLE = "gamespace_auto_brightness_disabled"
@@ -87,5 +91,6 @@ class AppSettings @Inject constructor(private val context: Context) {
         const val KEY_DOUBLE_TAP_TO_SLEEP = "double_tap_sleep_gesture"
         const val KEY_FAST_CHARGE_ENABLER = "fast_charge_enabler"
         const val KEY_HIGH_TOUCH_POLLING_RATE = "high_touch_polling_rate"
+        const val KEY_DISPLAY_AUTO_OUTDOOR_MODE = "display_auto_outdoor_mode"
     }
 }

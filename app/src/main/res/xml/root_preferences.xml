@@ -48,6 +48,12 @@
 
         <SwitchPreferenceCompat
             android:defaultValue="true"
+            android:key="display_auto_outdoor_mode"
+            android:summary="@string/display_auto_outdoor_mode_disabled_title"
+            android:title="@string/display_auto_outdoor_mode_disabled_summary" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
             android:key="double_tap_sleep_gesture"
             android:title="@string/double_tap_to_sleep_title"
             android:summary="@string/double_tap_to_sleep_summary"/>
