@@ -29,6 +29,7 @@
     <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
     <string name="state_enabled">enabled</string>
     <string name="state_disabled">disabled</string>
+    <string name="game_added_to_library"><xliff:g id="gamename">%1$s</xliff:g> added to Game Space</string>
     <!-- Game Mode Name - sorted by GameManager's enum, do not modify the sequence! -->
     <string name="game_mode_title">Mode</string>
     <string-array name="game_mode_names">
