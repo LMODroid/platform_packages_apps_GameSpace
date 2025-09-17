@@ -29,4 +29,5 @@ data class SessionState(
     var doubleTapToSleep: Boolean? = null,
     var fastCharge: Boolean? = null,
     var highTouchPollingRate: Boolean? = null,
+    var displayAutoOutdoor: Boolean? = null,
 )

@@ -38,6 +38,7 @@ import javax.inject.Inject
 import com.libremobileos.providers.LMOSettings
 
 import com.libremobileos.hardware.LineageHardwareManager
+import com.libremobileos.hardware.LiveDisplayManager
 
 import vendor.lineage.fastcharge.V1_0.IFastCharge
 
@@ -137,6 +138,11 @@ class SettingsFragment : Hilt_SettingsFragment(), Preference.OnPreferenceChangeL
         findPreference<SwitchPreferenceCompat>(AppSettings.KEY_HIGH_TOUCH_POLLING_RATE)?.apply {
             val hardware = LineageHardwareManager.getInstance(context)
             isVisible = hardware?.isSupported(LineageHardwareManager.FEATURE_HIGH_TOUCH_POLLING_RATE) == true
+        }
+
+        findPreference<SwitchPreferenceCompat>(AppSettings.KEY_DISPLAY_AUTO_OUTDOOR_MODE)?.apply {
+            val hardware = LiveDisplayManager.getInstance(context)
+            isVisible = hardware?.config?.hasFeature(LiveDisplayManager.MODE_OUTDOOR) ?: false
         }
     }
 
