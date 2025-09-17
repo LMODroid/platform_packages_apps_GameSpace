@@ -82,6 +82,6 @@
     <string name="fast_charge_enabled_warning_confirm">Enable Anyway!</string>
     <string name="fast_charge_enabled_warning_cancel">Cancel</string>
 
-    <string name="high_touch_polling_rate_disabled_title">Disable High touch polling rate</string>
-    <string name="high_touch_polling_rate_disabled_summary">Disable Enable high touch polling rate while</string>
+    <string name="high_touch_polling_rate_disabled_title">Disable high touch polling rate</string>
+    <string name="high_touch_polling_rate_disabled_summary">Disable high touch polling rate while gaming</string>
 </resources>

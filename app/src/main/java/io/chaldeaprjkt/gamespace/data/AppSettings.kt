@@ -74,7 +74,7 @@ class AppSettings @Inject constructor(private val context: Context) {
         set(value) = db.edit().putBoolean(KEY_FAST_CHARGE_ENABLER, value).apply()
 
     var highTouchPollingRate
-        get() = db.getBoolean(KEY_HIGH_TOUCH_POLLING_RATE, true)
+        get() = db.getBoolean(KEY_HIGH_TOUCH_POLLING_RATE, false)
         set(value) = db.edit().putBoolean(KEY_HIGH_TOUCH_POLLING_RATE, value).apply()
 
     companion object {

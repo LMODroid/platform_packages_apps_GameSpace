@@ -37,7 +37,7 @@ import javax.inject.Inject
 
 import com.libremobileos.providers.LMOSettings
 
-import com.libremobileos.hardware.LineageHardwareManager;
+import com.libremobileos.hardware.LineageHardwareManager
 
 import vendor.lineage.fastcharge.V1_0.IFastCharge
 
