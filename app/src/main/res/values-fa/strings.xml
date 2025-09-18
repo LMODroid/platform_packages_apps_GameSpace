@@ -15,13 +15,14 @@
   -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">قضای بازی</string>
+    <string name="settings_title">فضای بازی</string>
     <string name="settings_summary">تنظیمات بازی خود را مدیریت کنید</string>
     <string name="app_selector_label">بازی خود را انتخاب کنید</string>
     <string name="auto_brightness_disabled_title">غیرفعال‌سازی تنظیمات نور اتوماتیک</string>
     <string name="auto_brightness_disabled_summary">در حین بازی، میزان نور صفحه را ثابت نگه‌ دارید</string>
     <string name="heads_up_disabled_title">غیرفعال‌سازی heads-up</string>
     <string name="heads_up_disabled_summary">اعلان‌ های اولویت بالا را در حین بازی غیرفعال کنید</string>
+    <string name="add_game">اضافه کردن</string>
     <string name="game_list_title">لیست بازی‌ها</string>
     <string name="game_remove_message">آیا مطمئن هستید که می‌خواهید بازی %1$s را از لیست بازی‌های خود حذف کنید؟</string>
     <string name="app_search_title">جستجو</string>
@@ -29,6 +30,7 @@
     <string name="three_screenshot_disabled_title">غیرفعال‌سازی اسکرین‌شات با حرکت دست</string>
     <string name="state_enabled">فعال</string>
     <string name="state_disabled">غیرفعال</string>
+    <string name="game_added_to_library"><xliff:g id="gamename">%1$s</xliff:g> به فضای بازی اضافه شد</string>
     <!-- Game Mode Name - sorted by GameManager's enum, do not modify the sequence! -->
     <string name="game_mode_title">حالت اجرا</string>
     <string-array name="game_mode_names">
@@ -75,8 +77,8 @@
     <string name="in_game_calls_auto_reject">رد خودکار</string>
     <string name="memory_format">استفاده از رم: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
 
-    <string name="double_tap_to_sleep_title">غیرفعال کردن دو ضربه برای خواب</string>
-    <string name="double_tap_to_sleep_summary">غیرفعال کردن دو ضربه در نوار وضعیت برای خواب در بازی</string>
+    <string name="double_tap_to_sleep_title">غیرفعال‌سازی دو ضربه برای خواب</string>
+    <string name="double_tap_to_sleep_summary">غیرفعال‌سازی دو ضربه در نوار وضعیت برای خواب در بازی</string>
 
     <string name="fastcharge_enabled_title">فعال کردن شارژ سریع</string>
     <string name="fastcharge_enabled_summary">فعال کردن شارژ سریع هنگام بازی کردن و اتصال گوشی به شارژر</string>
@@ -84,4 +86,10 @@
     <string name="fast_charge_enabled_warning_message">بازی کردن با دستگاه در حالتی که به شارژر متصل است می‌تواند به باتری آسیب برساند، اما غیرفعال کردن شارژ سریع می‌تواند این آسیب را کاهش دهد.\nآیا مطمئن هستید که می‌خواهید شارژ سریع را هنگام بازی کردن فعال کنید؟</string>
     <string name="fast_charge_enabled_warning_confirm">به هر حال فعال کن!</string>
     <string name="fast_charge_enabled_warning_cancel">لغو</string>
+
+    <string name="high_touch_polling_rate_disabled_title">غیرفعال‌سازی نرخ نمونه‌برداری لمسی بالا</string>
+    <string name="high_touch_polling_rate_disabled_summary">غیرفعال‌سازی نرخ نمونه‌برداری لمسی بالا هنگام بازی</string>
+
+    <string name="display_auto_outdoor_mode_disabled_title">غیرفعال‌سازی حالت فضای باز خودکار</string>
+    <string name="display_auto_outdoor_mode_disabled_summary">غیرفعال‌سازی افزایش خودکار روشنایی و اشباع زیر آفتاب</string>
 </resources>
