@@ -40,15 +40,20 @@ android_app {
         "dagger2-compiler",
     ],
 
+    aaptflags: [
+        "--rename-manifest-package",
+        "com.libremobileos.gamespace",
+    ],
+
     required: [
         "ANGLE",
-        "privapp_whitelist_io.chaldeaprjkt.gamespace.xml"
+        "privapp_whitelist_com.libremobileos.gamespace.xml"
     ],
 }
 
 prebuilt_etc_xml {
-    name: "privapp_whitelist_io.chaldeaprjkt.gamespace.xml",
-    src: "privapp_whitelist_io.chaldeaprjkt.gamespace.xml",
+    name: "privapp_whitelist_com.libremobileos.gamespace.xml",
+    src: "privapp_whitelist_com.libremobileos.gamespace.xml",
     system_ext_specific: true,
     filename_from_src: true,
     sub_dir: "permissions",

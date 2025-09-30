@@ -15,7 +15,7 @@
   ~ limitations under the License
   -->
 <permissions>
-    <privapp-permissions package="io.chaldeaprjkt.gamespace">
+    <privapp-permissions package="com.libremobileos.gamespace">
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
         <permission name="android.permission.ACCESS_FPS_COUNTER"/>
         <permission name="android.permission.MANAGE_GAME_MODE"/>
