@@ -25,9 +25,10 @@ import android.util.Log;
 import io.chaldeaprjkt.gamespace.utils.GameModeUtils
 import javax.inject.Inject
 
+import com.libremobileos.health.HealthInterface
 import com.libremobileos.providers.LMOSettings
 
-import vendor.lineage.fastcharge.V1_0.IFastCharge
+import vendor.lineage.health.FastChargeMode
 
 class SystemSettings @Inject constructor(
     context: Context,
@@ -36,11 +37,9 @@ class SystemSettings @Inject constructor(
     private val TAG = "GameSpaceSystemSettings"
 
     private val resolver = context.contentResolver
-    private var fastChargeService: IFastCharge? = try {
-            IFastCharge.getService()
-        } catch(e: Exception) {
-            null
-        }
+    private val healthInterface by lazy {
+        HealthInterface.getInstance(context)
+    }
 
     private val handler = Handler(Looper.getMainLooper())
     private var edgeCutoutRunnable: Runnable? = null
@@ -171,18 +170,10 @@ class SystemSettings @Inject constructor(
         }
 
     var fastCharge
-        get() = try {
-            fastChargeService?.isEnabled() ?: true
-        } catch (e: RemoteException) {
-            Log.e(TAG, "Failed to get fast charge state", e)
-            true // by default consider, it's enabled.
-        }
+        get() = healthInterface.getFastChargeMode() != FastChargeMode.NONE
         set(value) {
-            try {
-                fastChargeService?.setEnabled(value)
-            } catch (e: RemoteException) {
-                Log.e(TAG, "Failed to disable fast charge", e)
-            }
+            val mode = if (value) FastChargeMode.FAST_CHARGE else FastChargeMode.NONE
+            healthInterface.setFastChargeMode(mode)
         }
 
     var highTouchPollingRate
