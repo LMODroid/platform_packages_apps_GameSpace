@@ -35,12 +35,11 @@ import io.chaldeaprjkt.gamespace.preferences.appselector.AppSelectorActivity
 import java.util.NoSuchElementException
 import javax.inject.Inject
 
+import com.libremobileos.health.HealthInterface
 import com.libremobileos.providers.LMOSettings
 
 import com.libremobileos.hardware.LineageHardwareManager
 import com.libremobileos.hardware.LiveDisplayManager
-
-import vendor.lineage.fastcharge.V1_0.IFastCharge
 
 @AndroidEntryPoint(PreferenceFragmentCompat::class)
 class SettingsFragment : Hilt_SettingsFragment(), Preference.OnPreferenceChangeListener {
@@ -124,8 +123,8 @@ class SettingsFragment : Hilt_SettingsFragment(), Preference.OnPreferenceChangeL
                 true
             }
             try {
-                val fastCharge = IFastCharge.getService()
-                isVisible = fastCharge != null
+                val healthInterface = HealthInterface.getInstance(context)
+                isVisible = healthInterface.isFastChargeSupported()
                 // consider disable if not supported by device.
                 // since we enable it by default, it avoids trying to
                 // set fastcharge state in unsupported devices.
