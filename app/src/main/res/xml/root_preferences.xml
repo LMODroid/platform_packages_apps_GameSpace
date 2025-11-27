@@ -25,7 +25,7 @@
             android:title="@string/heads_up_disabled_title" />
 
         <ListPreference
-            android:defaultValue="0"
+            android:defaultValue="2"
             android:entries="@array/ringer_mode_entries"
             android:entryValues="@array/ringer_mode_values"
             android:key="gamespace_ringer_mode"
