@@ -38,6 +38,11 @@ class SystemSettings @Inject constructor(
 
     private val resolver = context.contentResolver
     private val healthInterface by lazy {
+        try {
+            HealthInterface.getInstance(context)
+        } catch (e: RemoteException) {
+            null
+        }
         HealthInterface.getInstance(context)
     }
 
@@ -169,11 +174,24 @@ class SystemSettings @Inject constructor(
             )
         }
 
-    var fastCharge
-        get() = healthInterface.getFastChargeMode() != FastChargeMode.NONE
+    var fastCharge: Boolean
+        get() {
+            return try {
+                healthInterface?.getFastChargeMode() != FastChargeMode.NONE
+            } catch (e: RemoteException) {
+                true // by default consider it's enabled on failure
+            } catch (e: Exception) {
+                Log.w(TAG, "Failed to read fast charge mode", e)
+                false
+            }
+        }
         set(value) {
-            val mode = if (value) FastChargeMode.FAST_CHARGE else FastChargeMode.NONE
-            healthInterface.setFastChargeMode(mode)
+            try {
+                val mode = if (value) FastChargeMode.FAST_CHARGE else FastChargeMode.NONE
+                healthInterface?.setFastChargeMode(mode)
+            } catch (e: RemoteException) {
+                Log.e(TAG, "Failed to disable fast charge", e)
+            }
         }
 
     var highTouchPollingRate
