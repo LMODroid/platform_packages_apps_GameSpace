@@ -16,7 +16,9 @@
 package io.chaldeaprjkt.gamespace.gamebar
 
 import android.app.Service
+import android.content.BroadcastReceiver
 import android.content.Intent
+import android.content.IntentFilter
 import android.content.res.Configuration
 import android.graphics.PixelFormat
 import android.graphics.Point
@@ -62,7 +64,7 @@ class GameBarService : Hilt_GameBarService() {
 
     private val barLayoutParam =
         WindowManager.LayoutParams(
-            WindowManager.LayoutParams.TYPE_SYSTEM_DIALOG,
+            WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
                     or WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
                     or WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
@@ -92,6 +94,14 @@ class GameBarService : Hilt_GameBarService() {
             gravity = Gravity.CENTER_VERTICAL
 
         }
+
+    private val screenReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            if (intent.action == Intent.ACTION_USER_PRESENT || intent.action == Intent.ACTION_SCREEN_ON) {
+                restoreBarView()
+            }
+        }
+    }
 
     private lateinit var rootBarView: View
     private lateinit var barView: LinearLayout
@@ -134,6 +144,10 @@ class GameBarService : Hilt_GameBarService() {
             .inflate(R.layout.window_util, frame, false)
         barView = rootBarView.requireViewById(R.id.container_bar)
         menuSwitcher = rootBarView.requireViewById(R.id.action_menu_switcher)
+        registerReceiver(screenReceiver, IntentFilter().apply {
+            addAction(Intent.ACTION_USER_PRESENT)
+            addAction(Intent.ACTION_SCREEN_ON)
+        })
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -152,6 +166,7 @@ class GameBarService : Hilt_GameBarService() {
     }
 
     override fun onDestroy() {
+        unregisterReceiver(screenReceiver)
         onGameLeave()
         super.onDestroy()
     }
@@ -207,6 +222,13 @@ class GameBarService : Hilt_GameBarService() {
             if (rootBarView.isAttachedToWindow) {
                 wm.updateViewLayout(rootBarView, barLayoutParam)
             }
+        }
+    }
+
+    private fun restoreBarView() {
+        if (!::rootBarView.isInitialized || shouldClose) return
+        if (!rootBarView.isAttachedToWindow) {
+            updateRootBarView()
         }
     }
 
