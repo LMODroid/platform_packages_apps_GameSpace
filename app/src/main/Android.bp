@@ -45,7 +45,6 @@ android_app {
     ],
 
     required: [
-        "ANGLE",
         "privapp_whitelist_com.libremobileos.gamespace.xml"
     ],
 }
